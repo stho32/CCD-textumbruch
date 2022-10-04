@@ -12,4 +12,8 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Textumbruch.Interactors\Textumbruch.Interactors.csproj" />
+  </ItemGroup>
+
 </Project>
