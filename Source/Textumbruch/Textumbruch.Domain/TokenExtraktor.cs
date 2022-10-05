@@ -26,7 +26,7 @@ public class TokenExtraktor : TextWrapperTokenExtraktor
     private bool ZeileWaereMitNeuemWortZuLang(string naechstesWort, string zeileBisher, int maximaleZeilenbreite)
     {
         var trennzeichenInnerhalbEinerZeile = " ";
-        return (zeileBisher + trennzeichenInnerhalbEinerZeile + naechstesWort).Length > maximaleZeilenbreite;
+        return (zeileBisher + trennzeichenInnerhalbEinerZeile + naechstesWort).Trim().Length > maximaleZeilenbreite;
     }
 
     private NaechstesWortResult ExtrahiereBisMaximaleBreite(string restUrsprungsdaten, int maximaleZeilenbreite)
