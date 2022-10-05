@@ -31,8 +31,8 @@ public class TextWrapper
             if (naechstesWort.OptimalesToken == Environment.NewLine)
             {
                 ergebnis.AppendLine(aktuelleZeile);
+                aktuelleZeile = "";
                 rest = naechstesWort.Rest;
-                aktuelleZeile = ""; 
                 continue;
             }
             

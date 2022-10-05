@@ -25,13 +25,18 @@ public class TokenExtraktor : TextWrapperTokenExtraktor
 
     private bool ZeileWaereMitNeuemWortZuLang(string naechstesWort, string zeileBisher, int maximaleZeilenbreite)
     {
-        return naechstesWort.Length + zeileBisher.Length + 1 > maximaleZeilenbreite;
+        var trennzeichenInnerhalbEinerZeile = " ";
+        return (zeileBisher + trennzeichenInnerhalbEinerZeile + naechstesWort).Length > maximaleZeilenbreite;
     }
 
     private NaechstesWortResult ExtrahiereBisMaximaleBreite(string restUrsprungsdaten, int maximaleZeilenbreite)
     {
-        var result = restUrsprungsdaten.Substring(0, maximaleZeilenbreite -1) + "-";
-        return new NaechstesWortResult(result, restUrsprungsdaten.Substring(maximaleZeilenbreite -1));
+        var trennzeichen = "-";
+        var maximalerIndexMinusPlatzFuerTrennzeichen = maximaleZeilenbreite - trennzeichen.Length;
+        
+        var result = restUrsprungsdaten.Substring(0, maximalerIndexMinusPlatzFuerTrennzeichen) + trennzeichen;
+        
+        return new NaechstesWortResult(result, restUrsprungsdaten.Substring(maximalerIndexMinusPlatzFuerTrennzeichen));
     }
 
     private NaechstesWortResult ExtrahiereBisZumNaechstenWhitespace(string restUrsprungsdaten)

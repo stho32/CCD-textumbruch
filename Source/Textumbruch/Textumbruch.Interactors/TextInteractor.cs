@@ -1,4 +1,6 @@
-﻿namespace Textumbruch.Interactors;
+﻿using Textumbruch.Domain;
+
+namespace Textumbruch.Interactors;
 
 public class TextInteractor
 {
@@ -11,7 +13,7 @@ public class TextInteractor
 
     public string UmbrechenAufMaximaleBreiteVonZeichen(int maximaleBreite)
     {
-        // var textWrapper = new TextWrapper()
-        return string.Empty;
+        var textWrapper = new TextWrapper(_text, maximaleBreite, new TokenExtraktor());
+        return textWrapper.Wrap();
     }
 }

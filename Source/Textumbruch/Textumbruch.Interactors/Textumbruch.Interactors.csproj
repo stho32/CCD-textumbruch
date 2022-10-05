@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Textumbruch.Domain\Textumbruch.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

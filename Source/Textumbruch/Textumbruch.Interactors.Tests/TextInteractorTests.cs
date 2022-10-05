@@ -31,8 +31,8 @@ daraus wird.".ReplaceLineEndings(), result);
         var textInteractor = new TextInteractor("DiesIstEinGanzFurchtbarLangesWortDasSoGarnichtVorkommenSollte");
         var result = textInteractor.UmbrechenAufMaximaleBreiteVonZeichen(25);
         
-        Assert.AreEqual(@"DiesIstEinGanzFurchtbar-
-LangesWortDasSoGarnicht-
-VorkommenSollte".ReplaceLineEndings(), result);
+        Assert.AreEqual(@"DiesIstEinGanzFurchtbarL-
+angesWortDasSoGarnichtVo-
+rkommenSollte".ReplaceLineEndings(), result);
     }
 }
