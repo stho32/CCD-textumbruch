@@ -103,6 +103,7 @@
             this.UmbrechenButton.TabIndex = 6;
             this.UmbrechenButton.Text = "Umbrechen";
             this.UmbrechenButton.UseVisualStyleBackColor = true;
+            this.UmbrechenButton.Click += new System.EventHandler(this.UmbrechenButton_Click);
             // 
             // MainForm
             // 
