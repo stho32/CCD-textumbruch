@@ -1,63 +1,50 @@
-﻿namespace Textumbruch.Domain;
+﻿using System.Text;
+
+namespace Textumbruch.Domain;
+
 public class TextWrapper
 {
     private readonly string _text;
     private readonly int _maximaleBreite;
-    private List<string> _aktuellerPuffer;
-    
-    public TextWrapper(string text, int maximaleBreite)
+    private readonly TokenExtraktor _tokenExtraktor;
+
+    public TextWrapper(string text, int maximaleBreite, TokenExtraktor tokenExtraktor)
     {
         _text = text;
         _maximaleBreite = maximaleBreite;
-        _aktuellerPuffer = new List<string>();
+        _tokenExtraktor = tokenExtraktor;
     }
 
-    public string[] Wrap()
+    public string Wrap()
     {
-        var einzelneWorte = TextInWorteZerlegen(_text);
+        StringBuilder ergebnis = new StringBuilder();
+        string rest = _text;
+
         var aktuelleZeile = "";
-        var gesamtergebnis = new List<string>();
-
-        foreach (var wort in einzelneWorte)
+        while(true)
         {
-            // GetNextTeilwort ...
+            var naechstesWort = _tokenExtraktor.NaechstesOptimalesToken(aktuelleZeile, rest, _maximaleBreite);
             
-            //     var potenzielleLaengeMitWort = (aktuelleZeile + " " + wort).Trim().Length;
-            //     if (BreiteReichtAusFuerNeuesWort(wort))
-            //     {
-            //         ErweitereZeileAktuelleZeileUmWort(wort);
-            //         gesamtergebnis.Add(aktuelleZeile.Trim());
-            //         aktuelleZeile = "";
-            //     }
-            //
-            //     var restwort = wort;
-            //     while (restwort.Length > 0)
-            //     {
-            //         if (restwort.Length > maximaleBreite)
-            //         {
-            //             var teilwort = restwort.Substring(0, maximaleBreite - 1);
-            //             teilwort += "-";
-            //             aktuelleZeile += teilwort;
-            //         }
-            //         aktuelleZeile += " " + wort;                
-            //     }
-            //     
-            // }
-            //
-            // if (!string.IsNullOrEmpty(aktuelleZeile))
-            // {
-            //     gesamtergebnis.Add(aktuelleZeile.Trim());            
-            // }
-            //     
-            // return string
-            //     .Join("\n", gesamtergebnis)
-            //     .ReplaceLineEndings()
-            //     .Trim();
+            if (naechstesWort.EndeIstErreicht)
+                break;
+
+            if (naechstesWort.OptimalesToken == Environment.NewLine)
+            {
+                ergebnis.AppendLine(aktuelleZeile);
+                rest = naechstesWort.Rest;
+                aktuelleZeile = ""; 
+                continue;
+            }
+            
+            aktuelleZeile += " " + naechstesWort.OptimalesToken;
+            aktuelleZeile = aktuelleZeile.Trim();
+            rest = naechstesWort.Rest;
         }
+
+        if (!string.IsNullOrWhiteSpace(aktuelleZeile))
+            ergebnis.Append(aktuelleZeile);
+
+        return ergebnis.ToString();
     }
 
-    private string[] TextInWorteZerlegen(string text)
-    {
-        return text.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-    }
 }
