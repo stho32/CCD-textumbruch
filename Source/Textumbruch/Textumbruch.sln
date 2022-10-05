@@ -1,29 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textumbruch.Persistence", "Textumbruch.Persistence\Textumbruch.Persistence.csproj", "{AA3AF535-2212-4929-8A9E-1F9D0DAEE843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textumbruch.Persistence", "Textumbruch.Persistence\Textumbruch.Persistence.csproj", "{AA3AF535-2212-4929-8A9E-1F9D0DAEE843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textumbruch.Domain", "Textumbruch.Domain\Textumbruch.Domain.csproj", "{2EB22B8D-89FB-41CB-8BE0-109669D06902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textumbruch.Domain", "Textumbruch.Domain\Textumbruch.Domain.csproj", "{2EB22B8D-89FB-41CB-8BE0-109669D06902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textumbruch.Domain.Tests", "Textumbruch.Domain.Tests\Textumbruch.Domain.Tests.csproj", "{1D746708-80F6-45E4-A6A5-9EFD8BAB60EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textumbruch.Domain.Tests", "Textumbruch.Domain.Tests\Textumbruch.Domain.Tests.csproj", "{1D746708-80F6-45E4-A6A5-9EFD8BAB60EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textumbruch.Interactors", "Textumbruch.Interactors\Textumbruch.Interactors.csproj", "{7FBC7941-D7BA-4202-849D-524CE0F28974}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textumbruch.Interactors", "Textumbruch.Interactors\Textumbruch.Interactors.csproj", "{7FBC7941-D7BA-4202-849D-524CE0F28974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textumbruch.Interactors.Tests", "Textumbruch.Interactors.Tests\Textumbruch.Interactors.Tests.csproj", "{15316AE9-9238-4AA4-8800-56423564C120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textumbruch.Interactors.Tests", "Textumbruch.Interactors.Tests\Textumbruch.Interactors.Tests.csproj", "{15316AE9-9238-4AA4-8800-56423564C120}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textumbruch.Contracts", "Textumbruch.Contracts\Textumbruch.Contracts.csproj", "{AA27C2CF-1558-43BC-9320-750722619EC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textumbruch.Contracts", "Textumbruch.Contracts\Textumbruch.Contracts.csproj", "{AA27C2CF-1558-43BC-9320-750722619EC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textumbruch.Contracts.Tests", "Textumbruch.Contracts.Tests\Textumbruch.Contracts.Tests.csproj", "{C5D8B4AC-13FD-4187-96F4-0B668CCB8289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textumbruch.Contracts.Tests", "Textumbruch.Contracts.Tests\Textumbruch.Contracts.Tests.csproj", "{C5D8B4AC-13FD-4187-96F4-0B668CCB8289}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textumbruch.WinForms", "Textumbruch.WinForms\Textumbruch.WinForms.csproj", "{D02F3B63-41B3-4C27-B9B3-6FEB54375DBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AA3AF535-2212-4929-8A9E-1F9D0DAEE843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -54,5 +53,15 @@ Global
 		{C5D8B4AC-13FD-4187-96F4-0B668CCB8289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D8B4AC-13FD-4187-96F4-0B668CCB8289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5D8B4AC-13FD-4187-96F4-0B668CCB8289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D02F3B63-41B3-4C27-B9B3-6FEB54375DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02F3B63-41B3-4C27-B9B3-6FEB54375DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02F3B63-41B3-4C27-B9B3-6FEB54375DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02F3B63-41B3-4C27-B9B3-6FEB54375DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9130DA75-C95C-45D3-AC1B-FE7633B73773}
 	EndGlobalSection
 EndGlobal
