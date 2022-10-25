@@ -2,18 +2,11 @@
 
 namespace Textumbruch.Interactors;
 
-public class TextInteractor
+public static class TextInteractor
 {
-    private readonly string _text;
-
-    public TextInteractor(string text)
+    public static string UmbrechenAufMaximaleBreiteVonZeichen(string text, int maximaleBreite)
     {
-        _text = text;
-    }
-
-    public string UmbrechenAufMaximaleBreiteVonZeichen(int maximaleBreite)
-    {
-        var textWrapper = new TextWrapper(_text, maximaleBreite, new TokenExtraktor());
+        var textWrapper = new TextWrapper(text, maximaleBreite, new TokenExtraktor());
         return textWrapper.Wrap();
     }
 }

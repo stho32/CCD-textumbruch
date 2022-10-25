@@ -11,8 +11,8 @@ namespace Textumbruch.WinForms
 
         private void UmbrechenButton_Click(object sender, EventArgs e)
         {
-            var interactor = new TextInteractor(VorherTextbox.Text);
-            var ergebnis = interactor.UmbrechenAufMaximaleBreiteVonZeichen(
+            var ergebnis = TextInteractor.UmbrechenAufMaximaleBreiteVonZeichen(
+                VorherTextbox.Text, 
                 (int)BreiteInZeichenNumericUpDown.Value
             );
             NachherTextbox.Text = ergebnis;

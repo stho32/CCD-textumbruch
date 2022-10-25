@@ -1,6 +1,6 @@
 ﻿namespace Textumbruch.Domain;
 
-public interface TextWrapperTokenExtraktor
+public interface ITextWrapperTokenExtraktor
 {
     TokenExtraktorResult NaechstesOptimalesToken(string zeileBisher, string restUrsprungsdaten, int maximaleZeilenbreite);
 }
